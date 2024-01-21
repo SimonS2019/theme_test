@@ -1,9 +1,10 @@
-<!-- an example for using angular material -->
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>My App</span>
-    <span class="spacer"></span>
-    <button mat-button routerLink="/home">Home</button>
-    <button mat-button routerLink="/about">About</button>
-    <button mat-button routerLink="/contact">Contact</button>
-  </mat-toolbar-row>
+    <span>
+      <mat-slide-toggle
+        [checked]="isDarkMode"
+        (change)="onDarkModeSwitched($event)"
+        >Dark Mode</mat-slide-toggle
+      >
+    </span>
+  </mat-toolbar>
+  

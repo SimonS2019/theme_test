@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent  {
 
-  constructor() { }
+  @Input()
+  isDarkMode = false;
 
-  ngOnInit(): void {
+  @Output()
+  readonly darkModeSwitched = new EventEmitter<boolean>();
+
+  onDarkModeSwitched({ checked }: any) {
+    this.darkModeSwitched.emit(checked);
   }
-
 }
