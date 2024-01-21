@@ -9,7 +9,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
-import { NavComponent } from './navigation/nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [AppComponent, NavComponent],
