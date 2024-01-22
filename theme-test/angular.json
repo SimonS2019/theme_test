@@ -31,11 +31,13 @@
               "src/styles.scss",
               {
                 "input": "src/assets/styles/light-theme.scss",
-                "inject": false
+                "inject": false,
+                "bundleName": "light-theme"
               },
               {
                 "input": "src/assets/styles/dark-theme.scss",
-                "inject": false
+                "inject": false,
+                "bundleName" : "dark-theme"
               }
             ],
             "scripts": []
