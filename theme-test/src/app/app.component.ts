@@ -1,5 +1,5 @@
+import { Component, Inject, Renderer2 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { Component, HostBinding, Inject, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +8,10 @@ import { Component, HostBinding, Inject, Renderer2 } from '@angular/core';
 })
 export class AppComponent {
   get isDarkMode(): boolean {
-    return this.currentTheme === 'theme-dark';
+    return this.currentTheme === 'dark-theme';
   }
 
-  private currentTheme = 'theme-light';
+  private currentTheme = 'light-theme';
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -19,13 +19,36 @@ export class AppComponent {
   ) {}
 
   ngOnInit(): void {
-    this.currentTheme = localStorage.getItem('activeTheme') || 'theme-light';
+    this.currentTheme = localStorage.getItem('activeTheme') || 'light-theme';
+    this.loadTheme(this.currentTheme);
     this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
   }
 
   switchMode(isDarkMode: boolean) {
-    this.currentTheme = isDarkMode ? 'theme-dark' : 'theme-light';
+    this.currentTheme = isDarkMode ? 'dark-theme' : 'light-theme';
+    this.loadTheme(this.currentTheme);
     this.renderer.setAttribute(this.document.body, 'class', this.currentTheme);
     localStorage.setItem('activeTheme', this.currentTheme);
+  }
+
+  loadTheme(themeName: string) {
+    const head = this.document.getElementsByTagName('head')[0];
+  
+    let themeLink = this.document.getElementById(
+      'client-theme'
+    ) as HTMLLinkElement;
+    if (themeLink) {
+      // If we already have a theme, change its href
+      themeLink.href = `${themeName}.css`;
+    } else {
+      // Else, create the link element for theme
+      themeLink = this.document.createElement('link');
+      themeLink.id = 'client-theme';
+      themeLink.rel = 'stylesheet';
+      themeLink.href = `${themeName}.css`;
+  
+      // Add the theme to the head
+      head.appendChild(themeLink);
+    }
   }
 }

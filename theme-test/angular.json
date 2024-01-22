@@ -28,7 +28,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/assets/light-theme.scss",
+                "inject": false
+              },
+              {
+                "input": "src/assets/dark-theme.scss",
+                "inject": false
+              }
             ],
             "scripts": []
           },

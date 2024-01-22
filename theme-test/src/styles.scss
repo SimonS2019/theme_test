@@ -1,11 +1,11 @@
 @use '@angular/material' as mat;
-@use 'src/styles/light-theme' as light;
-@use 'src/styles/dark-theme' as dark;
+// @use 'src/styles/light-theme' as light;
+// @use 'src/styles/dark-theme' as dark;
 
-.theme-light {
-  @include mat.all-component-themes(light.$light-theme);
-}
+// .theme-light {
+//   @include mat.all-component-themes(light.$light-theme);
+// }
 
-.theme-dark {
-  @include mat.all-component-themes(dark.$dark-theme);
-}
+// .theme-dark {
+//   @include mat.all-component-themes(dark.$dark-theme);
+// }
