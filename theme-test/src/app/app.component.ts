@@ -39,13 +39,13 @@ export class AppComponent {
     ) as HTMLLinkElement;
     if (themeLink) {
       // If we already have a theme, change its href
-      themeLink.href = `${themeName}.css`;
+      themeLink.href = `/${themeName}.css`;
     } else {
       // Else, create the link element for theme
       themeLink = this.document.createElement('link');
       themeLink.id = 'client-theme';
       themeLink.rel = 'stylesheet';
-      themeLink.href = `${themeName}.css`;
+      themeLink.href = `/${themeName}.css`;
   
       // Add the theme to the head
       head.appendChild(themeLink);

@@ -30,11 +30,11 @@
             "styles": [
               "src/styles.scss",
               {
-                "input": "src/assets/light-theme.scss",
+                "input": "src/assets/styles/light-theme.scss",
                 "inject": false
               },
               {
-                "input": "src/assets/dark-theme.scss",
+                "input": "src/assets/styles/dark-theme.scss",
                 "inject": false
               }
             ],
